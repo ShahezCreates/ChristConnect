@@ -1,250 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Christ Connect — everything at Christ, one place." />
-  <title>Christ Connect — Campus Life, Connected</title>
+  <meta name="description" content="Christ Connect student home dashboard" />
+  <title>Home · Christ Connect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Christ Connect home"><span class="brand-mark">C</span><span>CHRIST
-        <b>CONNECT</b></span></a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a class="active" href="#home">Home</a><a href="#discover">Discover</a><a href="#events">Events</a><a
-        href="#community">Community</a>
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="#home" aria-label="Christ Connect home">
+      <span class="brand-mark">C</span>
+      <span>CHRIST<br><b>CONNECT</b></span>
+    </a>
+    <nav>
+      <a class="active" href="#home"><span>⌂</span>Home</a>
+      <a href="#announcements"><span>◉</span>Bulletin</a>
+      <a href="#events"><span>◫</span>Events <b class="nav-badge">4</b></a>
+      <a href="#clubs"><span>◌</span>Clubs</a>
+      <a href="#essentials"><span>◇</span>Student life</a>
     </nav>
-    <div class="header-actions"><button class="icon-button notification-button"
-        aria-label="Notifications">♢<i></i></button><button class="profile-chip"><span>AK</span><small>My
-          space</small></button><button class="menu-button" aria-label="Open menu">☰</button></div>
-  </header>
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
-    <p class="eyebrow"><span></span> EXPLORE CHRIST CONNECT</p>
-    <a href="#home">Home</a><a href="#discover">Clubs & spaces</a><a href="#events">Events</a>
-    <a href="#life-now">Student essentials</a><a href="#community">Community & rewards</a>
-    <small>Academics stay in ERP.<br />Campus life lives here.</small>
-  </div>
-
-  <main>
-    <section class="hero section-shell" id="home">
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> THE STUDENT LIFE PLATFORM</p>
-        <h1>Everything at Christ.<br /><em>One place.</em></h1>
-        <p class="hero-description">Find your people, pursue your passions, and make every moment on campus count.</p>
-        <div class="search-wrap">
-          <span class="search-icon">⌕</span><input id="globalSearch" type="search"
-            placeholder="Search clubs, events, people, places..." autocomplete="off" />
-          <button id="searchButton">Search <span>→</span></button>
-          <div class="search-results" id="searchResults" aria-live="polite"></div>
-        </div>
-        <div class="popular-searches"><span>Popular:</span><button data-search="Hackathons">Hackathons</button><button
-            data-search="Dance clubs">Dance clubs</button><button data-search="Second-hand books">Books</button></div>
+    <div class="sidebar-bottom">
+      <p>YOUR CAMPUS<br>AT A GLANCE</p>
+      <div class="mini-avatars">
+        <i>AR</i>
+        <i>KM</i>
+        <i>+28k</i>
       </div>
-      <div class="hero-visual reveal delay-1" aria-label="Highlights from campus">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="spark spark-one">✦</div>
-        <div class="spark spark-two">✦</div>
-        <div class="hero-card event-mini"><span class="card-icon orange">✦</span>
-          <div><small>HAPPENING TODAY</small><strong>Pulse '25</strong>
-            <p>Central Campus · 4:30 PM</p>
-          </div>
-        </div>
-        <div class="hero-card people-mini">
-          <div class="avatars"><span>R</span><span>M</span><span>S</span><span>+12</span></div>
-          <div><strong>Find your circle</strong>
-            <p>Connect with 28,000+ students</p>
-          </div>
-        </div>
-        <div class="central-bubble"><span>✣</span><b>YOUR<br />CAMPUS<br />AWAITS</b></div>
+      <small>28,402 students connected</small>
+    </div>
+  </aside>
+
+  <main id="home">
+    <header class="topbar">
+      <button class="mobile-menu" aria-label="Open navigation">☰</button>
+      <div>
+        <p class="date-label" id="todayDate">FRIDAY, 25 JULY</p>
+        <h1>Good morning, <em>Arjun.</em></h1>
       </div>
-      <div class="scroll-hint"><span></span> SCROLL TO EXPLORE</div>
-    </section>
+      <div class="top-actions">
+        <button class="icon-btn" id="notificationButton" aria-label="Open notifications">♧<i></i></button>
+        <button class="profile" id="profileButton">
+          <span>AK</span>
+          <b>Arjun Kumar</b>
+          <small>⌄</small>
+        </button>
+      </div>
+    </header>
 
-    <section class="announcement-strip">
-      <div class="section-shell strip-content"><span class="announcement-dot">●</span><b>Campus
-          bulletin</b><span>Registrations for NEXUS '25 are now open.</span><a href="#events">Explore events →</a></div>
-    </section>
-
-    <section class="section section-shell" id="discover">
-      <div class="section-heading reveal">
+    <section class="hero-grid">
+      <article class="hero-card">
         <div>
-          <p class="eyebrow">START EXPLORING</p>
-          <h2>Your campus, <em>at a glance.</em></h2>
-        </div><a href="#all-services" class="text-link">View all spaces <span>→</span></a>
+          <p class="eyebrow">YOUR CAMPUS, CONNECTED</p>
+          <h2>What will you<br>discover <em>today?</em></h2>
+          <p class="muted">Find people, plans and possibilities around Christ.</p>
+        </div>
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search events, clubs, things, skills..." autocomplete="off">
+          <kbd>⌘ K</kbd>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        <div class="popular">
+          <span>Try:</span>
+          <button data-search="NEXUS">NEXUS ’25</button>
+          <button data-search="guitar">Guitar lessons</button>
+          <button data-search="calculator">Calculator</button>
+        </div>
+      </article>
+
+      <article class="pulse-card">
+        <div class="pulse-top">
+          <span class="live-dot"></span> HAPPENING TODAY 
+          <button class="plain-action" data-modal="today">View all →</button>
+        </div>
+        <div class="pulse-icon">✦</div>
+        <p>PULSE ’25</p>
+        <h3>The energy is<br>building up.</h3>
+        <small>Central Campus · 4:30 PM</small>
+        <button class="light-button" data-modal="Pulse ’25">See what’s on <span>→</span></button>
+      </article>
+    </section>
+
+    <section class="section" id="announcements">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CAMPUS BULLETIN</p>
+          <h2>Stay in the <em>know.</em></h2>
+        </div>
+        <button class="text-button" data-modal="All announcements">View all announcements →</button>
       </div>
-      <div class="access-grid" id="all-services">
-        <article class="access-card large-card pink reveal">
-          <div class="card-top"><span class="service-icon">◈</span><span class="arrow">↗</span></div>
-          <h3>Clubs &<br />Societies</h3>
-          <p>Find the crew that feels like home.</p><span class="card-tag">60+ communities</span>
+      <div class="announcement-grid">
+        <article class="announcement featured">
+          <span class="pill coral">IMPORTANT</span>
+          <p class="announcement-date">24 JUL · ACADEMICS</p>
+          <h3>Semester registration closes this week.</h3>
+          <p>Complete your registration before 31 July to avoid a late fee.</p>
+          <button class="underlined" data-modal="Semester registration">Read update →</button>
         </article>
-        <article class="access-card tall-card blue reveal delay-1">
-          <div class="card-top"><span class="service-icon">◴</span><span class="arrow">↗</span></div>
-          <h3>What's<br />happening</h3>
-          <p>Never miss a moment.</p>
-          <div class="tiny-calendar"><span>JUL</span><b>19</b><small>12 events today</small></div>
+        <article class="announcement">
+          <span class="pill blue">EVENTS</span>
+          <p class="announcement-date">23 JUL · CULTURAL</p>
+          <h3>NEXUS ’25 registrations are now open.</h3>
+          <p>Take the stage, volunteer backstage, or cheer from the crowd.</p>
+          <button class="underlined" data-modal="NEXUS ’25">Explore NEXUS →</button>
         </article>
-        <article class="access-card green reveal delay-2">
-          <div class="card-top"><span class="service-icon">⌁</span><span class="arrow">↗</span></div>
-          <h3>Skill Exchange</h3>
-          <p>Teach. Learn. Grow together.</p>
-        </article>
-        <article class="access-card yellow reveal delay-3">
-          <div class="card-top"><span class="service-icon">▱</span><span class="arrow">↗</span></div>
-          <h3>Marketplace</h3>
-          <p>Campus finds, made easy.</p>
-        </article>
-        <article class="access-card purple reveal">
-          <div class="card-top"><span class="service-icon">⌖</span><span class="arrow">↗</span></div>
-          <h3>Lost & Found</h3>
-          <p>Good things find their way back.</p>
-        </article>
-        <article class="access-card coral reveal delay-1">
-          <div class="card-top"><span class="service-icon">◎</span><span class="arrow">↗</span></div>
-          <h3>Campus Guide</h3>
-          <p>Find your way around.</p>
+        <article class="announcement">
+          <span class="pill green">STUDENT LIFE</span>
+          <p class="announcement-date">22 JUL · WELLNESS</p>
+          <h3>New evening shuttle route starts Monday.</h3>
+          <p>Direct service from Central Campus to Kengeri after 7 PM.</p>
+          <button class="underlined" data-modal="Evening shuttle">Route details →</button>
         </article>
       </div>
     </section>
 
-    <section class="events-section" id="events">
-      <div class="section-shell">
-        <div class="section-heading light reveal">
+    <section class="section" id="events">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">DON’T MISS OUT</p>
+          <h2>Coming <em>up.</em></h2>
+        </div>
+        <div class="filter-group">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="today">Today</button>
+          <button class="filter" data-filter="week">This week</button>
+        </div>
+      </div>
+      <div class="event-grid" id="eventGrid"></div>
+    </section>
+
+    <section class="section clubs-section" id="clubs">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">FIND YOUR PEOPLE</p>
+          <h2>Trending <em>clubs.</em></h2>
+        </div>
+        <button class="text-button" data-modal="Club directory">Explore all clubs →</button>
+      </div>
+      <div class="club-grid">
+        <article class="club-card club-red">
+          <div class="club-symbol">⌘</div>
+          <span class="trend">↗ 24% this week</span>
+          <h3>Code<br>Collective</h3>
+          <p>Build, learn and ship together.</p>
           <div>
-            <p class="eyebrow">MARK YOUR CALENDAR</p>
-            <h2>There's always<br /><em>something on.</em></h2>
+            <span class="member-stack"><i>PK</i><i>AN</i><i>RY</i></span>
+            <small>1.4k members</small>
           </div>
-          <div class="event-controls"><button class="round-control" id="previousEvent"
-              aria-label="Previous events">←</button><button class="round-control" id="nextEvent"
-              aria-label="Next events">→</button></div>
-        </div>
-        <div class="events-layout reveal delay-1">
-          <article class="featured-event">
-            <div class="event-date"><span>JUL</span><b>24</b></div>
-            <div class="event-art art-1"><span>✺</span><small>CREATE.<br />CONNECT.<br />CELEBRATE.</small></div>
-            <div class="featured-event-info">
-              <p class="event-type">CULTURAL FEST</p>
-              <h3>NEXUS '25</h3>
-              <p>Where every talent finds its stage.</p>
-              <div><span>◷ 10:00 AM onwards</span><span>⌖ Block 4 Quadrangle</span></div><button
-                class="soft-button">View event <span>→</span></button>
-            </div>
-          </article>
-          <div class="event-list" id="eventList"></div>
-        </div>
+          <button class="join-button" data-join="Code Collective">Join club +</button>
+        </article>
+        <article class="club-card club-yellow">
+          <div class="club-symbol">◒</div>
+          <span class="trend">↗ 18% this week</span>
+          <h3>Raaga<br>Society</h3>
+          <p>For the music that moves you.</p>
+          <div>
+            <span class="member-stack"><i>MS</i><i>RA</i><i>+9</i></span>
+            <small>890 members</small>
+          </div>
+          <button class="join-button" data-join="Raaga Society">Join club +</button>
+        </article>
+        <article class="club-card club-blue">
+          <div class="club-symbol">◈</div>
+          <span class="trend">↗ 12% this week</span>
+          <h3>Lens &<br>Light</h3>
+          <p>See campus differently.</p>
+          <div>
+            <span class="member-stack"><i>DC</i><i>KV</i><i>TA</i></span>
+            <small>642 members</small>
+          </div>
+          <button class="join-button" data-join="Lens & Light">Join club +</button>
+        </article>
       </div>
     </section>
 
-    <section class="life-now section-shell" id="life-now">
-      <div class="section-heading reveal">
+    <section class="section" id="essentials">
+      <div class="section-head">
         <div>
           <p class="eyebrow">CAMPUS, MADE EASIER</p>
-          <h2>The little things, <em>sorted.</em></h2>
+          <h2>Your daily <em>essentials.</em></h2>
         </div>
-        <span class="section-note">Built for everyday student life</span>
+        <p class="section-copy">The useful stuff, close at hand.</p>
       </div>
-      <div class="life-grid">
-        <article class="life-card lost-card reveal">
-          <div class="life-card-heading"><span class="life-symbol">⌖</span><span class="live-label"><i></i> LIVE</span></div>
-          <p class="eyebrow">LOST & FOUND</p>
-          <h3>That missing<br />something.</h3>
-          <p>See what was found around campus today — and get it back to its person.</p>
-          <div class="found-item"><span>⌁</span><div><b>Black water bottle</b><small>Found near Library · 18 min ago</small></div></div>
-          <button class="link-button" data-action="Lost & Found">Browse notices <span>→</span></button>
+      <div class="essentials-grid">
+        <article class="essential-card lost">
+          <div class="essential-icon">⌕</div>
+          <span class="pill dark">LOST & FOUND</span>
+          <h3>Someone found<br>your thing.</h3>
+          <p class="muted">A black Casio calculator was found near the library.</p>
+          <div class="listing">
+            <span>▣</span>
+            <div>
+              <b>Black Casio calculator</b>
+              <small>Library · 18 min ago</small>
+            </div>
+          </div>
+          <button class="card-action" data-modal="Black Casio calculator">See found items →</button>
         </article>
-        <article class="life-card market-card reveal delay-1">
-          <div class="life-card-heading"><span class="life-symbol">▱</span><span class="pill-tag">STUDENT MARKET</span></div>
-          <p class="eyebrow">MARKETPLACE</p>
-          <h3>Good finds.<br />Better prices.</h3>
-          <p>Pass on what you no longer need, or find your next essential nearby.</p>
-          <div class="product-row"><div class="book-stack"><span></span><span></span><span></span></div><div><b>Engineering Graphics</b><small>Pre-loved · ₹250</small></div></div>
-          <button class="link-button" data-action="Marketplace">Explore marketplace <span>→</span></button>
+        <article class="essential-card market">
+          <div class="essential-icon">▱</div>
+          <span class="pill dark">MARKETPLACE</span>
+          <h3>Good finds,<br>better prices.</h3>
+          <p class="muted">Your next essential may be just around the corner.</p>
+          <div class="listing">
+            <span>▤</span>
+            <div>
+              <b>Engineering Graphics</b>
+              <small>Pre-loved · ₹250</small>
+            </div>
+          </div>
+          <button class="card-action" data-modal="Engineering Graphics">Browse marketplace →</button>
         </article>
-        <article class="life-card skill-card reveal delay-2">
-          <div class="life-card-heading"><span class="life-symbol">⌁</span><span class="pill-tag">PEER TO PEER</span></div>
-          <p class="eyebrow">SKILL EXCHANGE</p>
-          <h3>Teach what<br />you know.</h3>
-          <p>Trade an hour of your skill for someone else's — no fee, just learning.</p>
-          <div class="skill-match"><span class="match-avatar one">AS</span><span class="swap-symbol">↔</span><span class="match-avatar two">KP</span><small>Figma basics ↔ Guitar chords</small></div>
-          <button class="link-button" data-action="Skill Exchange">Find a skill swap <span>→</span></button>
+        <article class="essential-card skills">
+          <div class="essential-icon">↔</div>
+          <span class="pill dark">SKILL EXCHANGE</span>
+          <h3>Trade skills,<br>not money.</h3>
+          <p class="muted">Learn from a peer and teach something in return.</p>
+          <div class="listing">
+            <span class="pair">AS ↔ KP</span>
+            <div>
+              <b>Figma basics ↔ Guitar</b>
+              <small>A match for you</small>
+            </div>
+          </div>
+          <button class="card-action" data-modal="Skill exchange">Find a skill swap →</button>
         </article>
       </div>
     </section>
 
-    <section class="section section-shell" id="community">
-      <div class="community-head reveal">
+    <section class="today-section">
+      <div class="section-head">
         <div>
-          <p class="eyebrow">BETTER, TOGETHER</p>
-          <h2>Made for the people<br />who make Christ <em>Christ.</em></h2>
+          <p class="eyebrow">FRIDAY, 25 JULY</p>
+          <h2>Today on <em>campus.</em></h2>
         </div>
-        <p>From your first hello to your final hurrah, build a university story worth remembering.</p>
+        <button class="text-button light-text" data-modal="today">Open calendar →</button>
       </div>
-      <div class="community-grid">
-        <article class="community-card team reveal">
-          <div class="community-number">01</div>
-          <div><span class="line-icon">⌘</span>
-            <h3>Find your<br />dream team</h3>
-            <p>Discover collaborators for the next big idea.</p><a href="#">Explore teams →</a>
-          </div>
-          <div class="mini-people"><span>PS</span><span>NA</span><span>VK</span></div>
-        </article>
-        <article class="community-card rewards reveal delay-1">
-          <div class="community-number">02</div>
-          <div><span class="line-icon">✦</span>
-            <h3>Make a<br />difference</h3>
-            <p>Every contribution earns you more than points.</p><a href="#">See rewards →</a>
-          </div>
-          <div class="reward-badge">✦<br /><small>CAMPUS<br />CHAMPION</small></div>
-        </article>
-        <article class="community-card stories reveal delay-2">
-          <div class="community-number">03</div>
-          <div><span class="line-icon">◌</span>
-            <h3>Share your<br />story</h3>
-            <p>The moments, ideas and wins that inspire us all.</p><a href="#">Join the conversation →</a>
-          </div>
-        </article>
+      <div class="today-list" id="todayList"></div>
+    </section>
+
+    <section class="section quick-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">ONE TAP AWAY</p>
+          <h2>Quick <em>access.</em></h2>
+        </div>
+      </div>
+      <div class="quick-grid">
+        <a href="#announcements"><span>◉</span><b>Notices</b><small>7 new updates</small></a>
+        <a href="#events"><span>◫</span><b>My events</b><small>2 saved events</small></a>
+        <button data-modal="Campus map"><span>⌖</span><b>Campus map</b><small>Find a place</small></button>
+        <button data-modal="Support"><span>?</span><b>Help & support</b><small>We’re here</small></button>
       </div>
     </section>
 
-    <section class="stats-section">
-      <div class="section-shell stats-grid reveal">
-        <div><b data-target="28000">0</b><span>Students connected</span></div>
-        <div><b data-target="120">0</b><span>Active clubs & societies</span></div>
-        <div><b data-target="650">0</b><span>Events this year</span></div>
-        <div><b data-target="1800">0</b><span>Skills shared</span></div>
-      </div>
-    </section>
-    <section class="cta section-shell reveal">
-      <div>
-        <p class="eyebrow">YOUR STORY STARTS HERE</p>
-        <h2>Ready to make<br />campus <em>count?</em></h2>
-        <p>Join thousands of students creating a more connected Christ.</p>
-      </div><button class="primary-button" id="joinButton">Join Christ Connect <span>→</span></button>
+    <section class="stats">
+      <div><b data-count="28402">0</b><span>students connected</span></div>
+      <div><b data-count="126">0</b><span>active clubs</span></div>
+      <div><b data-count="47">0</b><span>events this week</span></div>
+      <div><b data-count="1840">0</b><span>skills shared</span></div>
     </section>
   </main>
-  <footer>
-    <div class="section-shell footer-grid"><a class="brand footer-brand" href="#top"><span
-          class="brand-mark">C</span><span>CHRIST <b>CONNECT</b></span></a>
-      <p>Everything at Christ. One place.</p>
-      <div class="footer-links"><a href="#discover">Explore</a><a href="#events">Events</a><a
-          href="#community">Community</a><a href="#top">Support</a></div><small>© 2025 Christ Connect · A student life
-        initiative</small>
-    </div>
-  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-modal" aria-label="Close">×</button>
+      <span class="pill coral" id="modalLabel">CHRIST CONNECT</span>
+      <h2 id="modalTitle">Details</h2>
+      <p id="modalText"></p>
+      <div class="modal-actions" id="modalActions"></div>
+    </section>
+  </div>
+
   <div class="toast" id="toast" role="status"></div>
+
   <script src="script.js"></script>
+  <script>
+    document.querySelector('#profileButton').addEventListener('click', () => {
+      window.location.href = 'profile.html';
+    });
+  </script>
 </body>
 
 </html>
