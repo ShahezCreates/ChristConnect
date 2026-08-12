@@ -24,11 +24,14 @@ body {
 
 button,
 input {
-    font: inherit
+    font: inherit;
+
+    
 }
 
 button {
-    cursor: pointer
+    cursor: pointer;
+    
 }
 
 .sidebar {
@@ -1231,6 +1234,7 @@ h2 em {
 
     .filter-group {
         margin-top: 4px
+        
     }
 
     .filter {
